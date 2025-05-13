@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UTS Car Rental</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Car Rental</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+  />
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="main.js" defer></script>
 </head>
-<body class="container dark">
-  <header>
-    <h1 id="logo">Car Rental System</h1>
-    <input type="search" id="searchBox" placeholder="Search type, brand or model!" />
-    <nav id="filters"></nav>
-  </header>
-  <main id="grid" class="row"></main>
+<body class="dark">
+  <div class="container">
+    <div class="layout">
+      <aside id="filters" class="sidebar">
+        <h2>Filters</h2>
+      </aside>
+
+      <main class="main-area">
+        <header class="main-header">
+          <h1 id="logo">Online Car Rental</h1>
+          <input
+            type="search"
+            id="searchBox"
+            placeholder="Search by type, brand, or model"
+          />
+        </header>
+        <section id="grid" class="row"></section>
+      </main>
+    </div>
+  </div>
 </body>
 </html>
