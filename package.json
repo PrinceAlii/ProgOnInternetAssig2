@@ -1,0 +1,25 @@
+{
+  "name": "car-rental-system",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5"
+  },
+  "description": "a car rental system",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrinceAlii/ProgOnInternetAssig2.git"
+  },
+  "author": "Ali Bonagdaran StudentID: 24763740",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrinceAlii/ProgOnInternetAssig2/issues"
+  },
+  "homepage": "https://github.com/PrinceAlii/ProgOnInternetAssig2#readme"
+}
