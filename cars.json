@@ -1,0 +1,43 @@
+{
+  "cars": [
+    {
+      "carType": "Sedan",
+      "brand": "Toyota",
+      "carModel": "Corolla",
+      "image": "https://media.drive.com.au/obj/tx_rs:auto:1920:1080:1/driveau/private/ca-s3/2014/02/2014-Toyota-Corolla-Sedan-625x416.jpg",
+      "yearOfManufacture": 2014,
+      "mileage": "30,000 km",
+      "fuelType": "Gasoline",
+      "available": true,
+      "pricePerDay": 50,
+      "description": "A reliable and fuel-efficient sedan perfect for daily commuting.",
+      "vin": "1HGBH41JXMN109186"
+    },
+    {
+      "carType": "SUV",
+      "brand": "Honda",
+      "carModel": "CR-V",
+      "image": "https://carfax-vrs.imgix.net/2001-Honda-CR-V-EX-100001260-08.png",
+      "yearOfManufacture": 2001,
+      "mileage": "45,000 km",
+      "fuelType": "Gasoline",
+      "available": false,
+      "pricePerDay": 70,
+      "description": "Spacious and versatile, great for family trips and outdoor adventures.",
+      "vin": "2HGFC2F60KH123456"
+    },
+    {
+      "carType": "Coupe",
+      "brand": "Ford",
+      "carModel": "Mustang",
+      "image": "https://media.ed.edmunds-media.com/ford/mustang/2010/oem/2010_ford_mustang_coupe_gt-premium_fq_oem_3_1600.jpg",
+      "yearOfManufacture": 2010,
+      "mileage": "15,000 km",
+      "fuelType": "Gasoline",
+      "available": true,
+      "pricePerDay": 120,
+      "description": "A powerful and stylish coupe offering an exhilarating driving experience.",
+      "vin": "1FA6P8TH6J5134567"
+    }
+  ]
+}
