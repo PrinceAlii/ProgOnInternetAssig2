@@ -20,7 +20,14 @@ function renderCars(cars) {
             <button class="rent-btn" data-vin="${car.vin}" ${!car.available ? 'disabled' : ''}>${car.available ? 'Rent' : 'Unavailable'}</button>
         </div>
     `).join('');
+    document.querySelectorAll('.rent-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            localStorage.setItem('selectedVin', btn.dataset.vin);
+            window.location.href = 'reservation.html';
+        });
+    });
 }
+
 
 function setupSearchAndFilters(cars) {
     const searchBox = document.getElementById('search-box');
