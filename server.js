@@ -1,5 +1,5 @@
 const express = require('express')
-const app = express()
+const app = express();
 const fs = require('fs');
 const path = require('path');
 
@@ -9,14 +9,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/cars', (req, res) => {
     fs.readFile('./cars.json', 'utf-8', (err, data) => {
         if (err) return res.status(500).send('[error] Unable to read car inventory database');
-        res.json(JSON.parse(data));
+        res.json(JSON.parse(data).cars);
     });
 });
 
 app.get('/orders', (req, res) => {
     fs.readFile('./orders.json', 'utf-8', (err, data) => {
         if (err) return res.status(500).send('[error] Unable to read orders database');
-        res.json(JSON.parse(data));
+        res.json(JSON.parse(data).orders);
     });
 });
 

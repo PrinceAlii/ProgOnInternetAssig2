@@ -13,6 +13,22 @@
   </header>
   <main>
     <section id="car-grid"></section>
+        <div class="controls">
+            <input id="search-box" type="text" placeholder="Search by type, brand, model or description">
+            <div id="suggestions" class="suggestions"></div>
+            <select id="type-filter">
+                <option value="">All Types</option>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="Coupe">Coupe</option>
+            </select>
+            <select id="brand-filter">
+                <option value="">All Brands</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+            </select>
+        </div>  
   </main>
   <script src="main.js"></script>
 </body>
