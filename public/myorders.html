@@ -8,13 +8,17 @@
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="UTS Car Rental Logo" id="logo" style="height: 85px;"/>
-        <h1>UTS Car Rental | My Reservations</h1>
-    </header>
+        <div class="header-left">
+          <a href="index.html" id="logo" aria-label="Home">
+            <img src="images/logo.png" alt="UTS Car Rental Logo"/>
+          </a>
+          <h1>UTS Car Rental | My Reservations</h1>
+        </div>>
+      </header>
     <main>
         <form id="order-search-form" class="styled-form" style="max-width:400px;margin:24px auto 0 auto;">
             <input type="email" id="order-email" placeholder="Enter your email to view reservations" required>
-            <button type="submit">Show My Reservations</button>
+            <button type="submit" class="nav-btn" >Show My Reservations</button>
         </form>
         <div id="orders-list" style="max-width:700px;margin:22px auto;"></div>
     </main>
