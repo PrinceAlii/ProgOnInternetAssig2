@@ -5,6 +5,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     renderCars(cars);
     setupSearchAndFilters(cars);
+
+    const reservationIcon = document.getElementById('reservation-label');
+    reservationIcon.addEventListener('click', e => {
+        e.preventDefault();
+        if (localStorage.getItem('reservationDraft') && localStorage.getItem('selectedVin')) {
+            window.location.href = 'reservation.html';
+        } else {
+            alert('No unfinished reservation found.');
+        }
+    });
 });
 
 function renderCars(cars) {
@@ -82,6 +92,35 @@ function setupSearchAndFilters(cars) {
             )
         );
         renderCars(filtered);
+
+        document.querySelectorAll('.car-card img, .car-card h2').forEach(el => {
+            el.addEventListener('click', e => {
+                const vin = el.closest('.car-card').querySelector('.rent-btn').dataset.vin;
+                const car = cars.find(c => c.vin === vin);
+                showCarModal(car);
+            });
+        });        
+
+        function showCarModal(car) {
+            const modalBg = document.getElementById('car-modal');
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <button id="close-modal">&times;</button>
+                <img src="${car.image}" alt="${car.carModel}" style="width:100%;border-radius:8px;max-height:150px;object-fit:cover;margin-bottom:12px;">
+                <h2>${car.brand} ${car.carModel}</h2>
+                <p>${car.description}</p>
+                <p>Type: ${car.carType}</p>
+                <p>Year: ${car.yearOfManufacture}</p>
+                <p>Mileage: ${car.mileage}</p>
+                <p>Fuel: ${car.fuelType}</p>
+                <p>Price per day: $${car.pricePerDay}</p>
+                <p>Status: <span style="color:${car.available ? '#09ab3b':'#e03c3c'}">${car.available ? 'Available':'Unavailable'}</span></p>
+            `;
+            modalBg.style.display = 'flex';
+            document.getElementById('close-modal').onclick = () => modalBg.style.display = 'none';
+            modalBg.onclick = e => { if (e.target === modalBg) modalBg.style.display = 'none'; };
+        }
+        
     }
 }
 

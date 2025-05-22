@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UTS Car Rental</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header>
-    <img src="images/logo.png" alt="Logo" id="logo" style="height: 80px;" />
+    <a href="index.html">
+      <img src="images/logo.png" alt="UTS Car Rental Logo" id="logo" style="height: 85px;"/>
+    </a>
     <h1>UTS Car Rental</h1>
+    <a id="myorders-link" href="myorders.html">My Reservations</a>
+    <a id="reservation-label" href="#">Resume Reservation</a>
   </header>
   <main>
     <div class="controls">
@@ -31,8 +33,10 @@
       </select>
     </div>
     <section id="car-grid"></section>
+    <div id="car-modal" class="modal-bg" style="display:none;">
+      <div class="modal-content" id="modal-content"></div>
+    </div>
   </main>
   <script src="main.js"></script>
 </body>
-
 </html>

@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Confirm your car</title>
+    <title>UTS Car Rental | Confirmation</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="Logo" id="logo" style="height: 80px;" />
-        <h1>UTS Car Rental | Confirm your car</h1>
+        <a href="index.html">
+            <img src="images/logo.png" alt="UTS Car Rental Logo" id="logo" style="height: 48px;"/>
+          </a>
+        <h1>UTS Car Rental | Confirmation</h1>
     </header>
     <main>
-        <div id="result"></div>
+        <div class="confirmation-container">
+            <div id="result"></div>
+        </div>
     </main>
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        document.getElementById('result').innerHTML =
-            params.get('status') === 'success'
-                ? '<h2>Reservation confirmed!</h2><a href="index.html">Return Home</a>'
-                : '<h2>Reservation failed. Car is unavailable.</h2><a href="index.html">Return Home</a>';
-    </script>
+    <script src="confirmation.js"></script>
 </body>
 
 </html>

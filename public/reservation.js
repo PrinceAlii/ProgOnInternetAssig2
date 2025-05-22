@@ -2,6 +2,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     const root = document.getElementById('reservation-root');
     const vin = localStorage.getItem('selectedVin');
 
+    const reservationIcon = document.getElementById('reservation-label');
+    reservationIcon.addEventListener('click', e => {
+        e.preventDefault();
+        if (localStorage.getItem('reservationDraft') && localStorage.getItem('selectedVin')) {
+            window.location.href = 'reservation.html';
+        } else {
+            alert('No unfinished reservation found.');
+        }
+    });
+
     if (!vin) {
         root.innerHTML = '<p>Please select a car to reserve from the homepage.</p>';
         return;
@@ -60,7 +70,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 rentalPeriod,
                 totalPrice: rentalPeriod * car.pricePerDay,
                 orderDate: new Date().toISOString().slice(0, 10)
-            }
+            },
+            status: "pending"
         };
         const resp = await fetch('/orders', {
             method: 'POST',
@@ -70,12 +81,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const result = await resp.json();
         if (result.success) {
             localStorage.removeItem('reservationDraft');
-            window.location.href = 'confirmation.html?status=success';
+            window.location.href = 'confirmation.html?orderId=' + result.orderId;
         } else {
             window.location.href = 'confirmation.html?status=failure';
         }
     });
-
+    
     document.getElementById('cancel-btn').addEventListener('click', () => {
         localStorage.removeItem('reservationDraft');
         window.location.href = 'index.html';
@@ -188,3 +199,5 @@ function validateForm(form, pricePerDay) {
 function showError(id, message) {
     document.getElementById(id).textContent = message;
 }
+
+
