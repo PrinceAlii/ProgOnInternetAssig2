@@ -8,7 +8,7 @@
       "yearOfManufacture": 2014,
       "mileage": "30,000 km",
       "fuelType": "Gasoline",
-      "available": true,
+      "available": false,
       "pricePerDay": 50,
       "description": "A reliable and fuel-efficient sedan perfect for daily commuting.",
       "vin": "1HGBH41JXMN109186"
@@ -21,7 +21,7 @@
       "yearOfManufacture": 2001,
       "mileage": "45,000 km",
       "fuelType": "Gasoline",
-      "available": false,
+      "available": true,
       "pricePerDay": 70,
       "description": "Spacious and versatile, great for family trips and outdoor adventures.",
       "vin": "2HGFC2F60KH123456"
