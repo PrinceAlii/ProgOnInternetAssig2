@@ -20,5 +20,28 @@ app.get('/orders', (req, res) => {
     });
 });
 
+app.post('/orders', (req, res) => {
+    fs.readFile('./orders.json', 'utf-8', (err, orderData) => {
+        if (err) return res.status(500).json({ success: false });
+        fs.readFile('./cars.json', 'utf-8', (err, carData) => {
+            if (err) return res.status(500).json({ success: false });
+            const ordersObj = JSON.parse(orderData);
+            const carsObj = JSON.parse(carData);
+            const vin = req.body.car.vin;
+            const car = carsObj.cars.find(c => c.vin === vin);
+            if (!car || !car.available) return res.json({ success: false });
+            ordersObj.orders.push(req.body);
+            car.available = false;
+            fs.writeFile('./orders.json', JSON.stringify(ordersObj, null, 2), err => {
+                if (err) return res.status(500).json({ success: false });
+                fs.writeFile('./cars.json', JSON.stringify(carsObj, null, 2), err => {
+                    if (err) return res.status(500).json({ success: false });
+                    res.json({ success: true });
+                });
+            });
+        });
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
