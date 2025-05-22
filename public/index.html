@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>UTS Car Rental</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <a href="index.html">
-      <img src="images/logo.png" alt="UTS Car Rental Logo" id="logo" style="height: 85px;"/>
-    </a>
-    <h1>UTS Car Rental</h1>
-    <a id="myorders-link" href="myorders.html">My Reservations</a>
-    <a id="reservation-label" href="#">Resume Reservation</a>
+    <div class="header-left">
+      <a href="index.html" id="logo" aria-label="Home">
+        <img src="images/logo.png" alt="UTS Car Rental Logo">
+      </a>
+      <h1>UTS Car Rental</h1>
+    </div>
+    <nav class="header-actions">
+      <a href="myorders.html" class="nav-btn">My Reservations</a>
+      <a href="#" id="reservation-label" class="nav-btn">Resume Reservation</a>
+    </nav>
   </header>
+
   <main>
-    <div class="controls">
-      <input id="search-box" type="text" placeholder="Search by type, brand, model or description">
-      <div id="suggestions" class="suggestions"></div>
-      <select id="type-filter">
+    <section class="controls">
+      <input id="search-box" type="text" placeholder="Search by anything" aria-label="Search cars">
+      <select id="type-filter" aria-label="Filter by type">
         <option value="">All Types</option>
-        <option value="Sedan">Sedan</option>
-        <option value="SUV">SUV</option>
-        <option value="Coupe">Coupe</option>
+        <option value="Supercar">Supercar</option>
+        <option value="Hypercar">Hypercar</option>
+        <option value="Luxury Sedan">Luxury Sedan</option>
+        <option value="Luxury SUV">Luxury SUV</option>
+        <option value="Luxury Coupe">Luxury Coupe</option>
       </select>
-      <select id="brand-filter">
+      <select id="brand-filter" aria-label="Filter by brand">
         <option value="">All Brands</option>
-        <option value="Toyota">Toyota</option>
-        <option value="Honda">Honda</option>
-        <option value="Ford">Ford</option>
+        <option value="Lamborghini">Lamborghini</option>
+        <option value="Bugatti">Bugatti</option>
+        <option value="Rolls-Royce">Rolls-Royce</option>
+        <option value="McLaren">McLaren</option>
+        <option value="Ferrari">Ferrari</option>
+        <option value="Bentley">Bentley</option>
+        <option value="Mercedes-Benz">Mercedes-Benz</option>
+        <option value="Porsche">Porsche</option>
       </select>
-    </div>
-    <section id="car-grid"></section>
-    <div id="car-modal" class="modal-bg" style="display:none;">
-      <div class="modal-content" id="modal-content"></div>
-    </div>
+      <div id="suggestions" class="suggestions" role="listbox"></div>
+    </section>
+
+    <section id="car-grid" class="car-grid"></section>
   </main>
+
   <script src="main.js"></script>
 </body>
 </html>
