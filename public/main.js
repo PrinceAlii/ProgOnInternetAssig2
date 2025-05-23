@@ -51,14 +51,6 @@ document.addEventListener('DOMContentLoaded',async()=>{
         window.location.href='reservation.html';
       });
     });
-
-    carGrid.querySelectorAll('.car-card').forEach(card=>{
-      const closeBtn=card.querySelector('.close-details');
-      closeBtn.addEventListener('click',e=>{
-        e.stopPropagation();
-        card.classList.remove('expanded');
-      });
-    });
   }
 
   function setupSearchAndFilters(allCars){
