@@ -5,19 +5,14 @@ const fs = require('fs/promises');
 const app = express();
 app.use(express.json());
 
-// Serve every static asset (HTML, CSS, JS, images) from this directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 const CARS_PATH   = path.join(__dirname, 'cars.json');
 const ORDERS_PATH = path.join(__dirname, 'orders.json');
 
-/* ---------- helpers ---------- */
-
 const readJSON  = file => fs.readFile(file, 'utf-8').then(JSON.parse);
 const writeJSON = (file, data) =>
   fs.writeFile(file, JSON.stringify(data, null, 2));
-
-/* ---------- routes ---------- */
 
 app.get('/cars', async (_req, res) => {
   try {
@@ -83,8 +78,6 @@ app.post('/orders/confirm', async (req, res) => {
     res.status(500).json({ success: false });
   }
 });
-
-/* ---------- start ---------- */
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
