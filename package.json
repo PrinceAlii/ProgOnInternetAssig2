@@ -1,6 +1,9 @@
 {
   "name": "car-rental-system",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "type": "commonjs",
   "scripts": {
     "start": "node server.js"
