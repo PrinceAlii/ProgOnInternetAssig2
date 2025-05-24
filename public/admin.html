@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LuxCarRentals | Admin Panel</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html" id="logo" aria-label="Home">
+                <img src="images/logo.png" alt="LuxCarRentalsLogo" />
+            </a>
+            <h1>LuxCarRentals | Admin Panel</h1>
+        </div>
+        <div class="header-actions">
+            <a href="index.html" class="nav-btn">Return to Homepage</a>
+        </div>
+    </header>
+    <main>
+        <div class="admin-container">
+            <section id="login-section" class="login-section styled-form">
+                <h2>Admin Login</h2>
+                <div class="form-field">
+                    <label for="admin-password">Password:</label>
+                    <input type="password" id="admin-password" name="admin-password" />
+                    <div class="error-msg" id="login-error-msg"></div>
+                </div>
+                <button id="login-btn" class="nav-btn">Login</button>
+            </section>
+
+            <section id="orders-section" class="orders-section" style="display: none;">
+                <h2>All Reservations</h2>
+                <div id="admin-orders-list">
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="admin.js"></script>
+</body>
+
+</html>
