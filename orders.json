@@ -104,6 +104,24 @@
         "orderDate": "2025-05-22"
       },
       "status": "confirmed"
+    },
+    {
+      "customer": {
+        "name": "Ali",
+        "phoneNumber": "0420922864",
+        "email": "alibonagdaran@gmail.com",
+        "driversLicenseNumber": "1234546"
+      },
+      "car": {
+        "vin": "ZHWUF5ZD4MLA12345"
+      },
+      "rental": {
+        "startDate": "2025-05-24",
+        "rentalPeriod": 5,
+        "totalPrice": 14000,
+        "orderDate": "2025-05-24"
+      },
+      "status": "pending"
     }
   ]
 }

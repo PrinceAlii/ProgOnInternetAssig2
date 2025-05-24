@@ -2,15 +2,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const root = document.getElementById('reservation-root');
     const vin = localStorage.getItem('selectedVin');
   
-    document.getElementById('reservation-label').addEventListener('click', e => {
-      e.preventDefault();
-      if (localStorage.getItem('reservationDraft') && localStorage.getItem('selectedVin')) {
-        window.location.href = 'reservation.html';
-      } else {
-        alert('No unfinished reservation found.');
-      }
-    });
-  
     if (!vin) {
       root.innerHTML = '<p style="padding:24px;text-align:center;">Please select a car to reserve from the homepage.</p>';
       return;
@@ -24,6 +15,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   
     if (!car) {
       root.innerHTML = '<p style="padding:24px;text-align:center;">Selected car not found.</p>';
+      return;
+    }
+
+    if (!car.available) {
+      root.innerHTML = `
+        <div class="car-card reservation-card">
+          <img src="<span class="math-inline">\{car\.image\}" alt\="</span>{car.carModel}" />
+          <div class="card-body"><h2>${car.brand} ${car.carModel}</h2></div>
+        </div>
+        <p style="padding:24px;text-align:center;color:var(--clr-danger);">This car is currently unavailable. Please return to the homepage and select another car.</p>
+        <div style="text-align:center;margin-top:16px;">
+          <a href="index.html" class="nav-btn">Return Home</a>
+        </div>
+      `;
       return;
     }
   

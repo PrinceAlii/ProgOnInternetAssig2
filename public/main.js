@@ -2,17 +2,6 @@ document.addEventListener('DOMContentLoaded',async()=>{
   const carGrid=document.getElementById('car-grid');
   const reservationLabel=document.getElementById('reservation-label');
 
-  if(reservationLabel){
-    reservationLabel.addEventListener('click',e=>{
-      e.preventDefault();
-      if(localStorage.getItem('reservationDraft')&&localStorage.getItem('selectedVin')){
-        window.location.href='reservation.html';
-      } else {
-        alert('No unfinished reservation found.');
-      }
-    });
-  }
-
   carGrid.innerHTML='<div class="spinner"></div>';
   const res=await fetch('/cars');
   const cars=await res.json();

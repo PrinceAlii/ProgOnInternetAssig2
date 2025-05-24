@@ -23,7 +23,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
   background: var(--clr-bg);
-  color: var(--clr-text);
+  color: white;
 }
 
 header {
@@ -126,6 +126,7 @@ header a#logo img {
   margin: 16px auto;
   position: relative;
   width: 400px;
+  color: white;
 }
 
 .suggestions {
