@@ -216,9 +216,18 @@ header a#logo img {
   background: var(--clr-primary-dark);
 }
 
-.rent-btn:disabled {
+/* .rent-btn:disabled {
   background: #555;
   cursor: not-allowed;
+} */
+
+button:disabled,
+.nav-btn:disabled, .rent-btn:disabled { 
+  background-color: #4b4a4a;
+  color: #f1ebeb;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
 }
 
 .reservation-container {
@@ -291,7 +300,7 @@ header a#logo img {
 .cancel-btn {
   padding: 10px 18px;
   border-radius: var(--radius-sm);
-  background: #444;
+  background: #ce4141;
   color: var(--clr-text);
   border: none;
   cursor: pointer;
