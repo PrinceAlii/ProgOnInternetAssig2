@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <p><b>Rental Period:</b> ${order.rental.rentalPeriod} days</p>
                   <p><b>Estimated Total:</b> $${order.rental.totalPrice}</p>
                   <p style="margin-top:15px; font-weight:bold; color:var(--clr-accent);">
-                      Please click "Confirm Reservation" to finalize your booking.
+                      Please click "Confirm Reservation" to finalise your booking.
                   </p>
               </div>
               <div class="form-actions" style="justify-content:center; margin-top:20px; gap: 15px;">

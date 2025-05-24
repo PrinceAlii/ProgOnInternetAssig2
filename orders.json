@@ -266,6 +266,24 @@
         "orderDate": "2025-05-24"
       },
       "status": "cancelled"
+    },
+    {
+      "customer": {
+        "name": "sadas",
+        "phoneNumber": "0420922864",
+        "email": "4565@gmail.com",
+        "driversLicenseNumber": "123456"
+      },
+      "car": {
+        "vin": "VF9SP3V37JM795006"
+      },
+      "rental": {
+        "startDate": "2025-05-25",
+        "rentalPeriod": 120,
+        "totalPrice": 780000,
+        "orderDate": "2025-05-24"
+      },
+      "status": "pending"
     }
   ]
 }
